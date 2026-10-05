@@ -1,1 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wanderlust Journeys | Custom Travel Experiences</title>
+<meta name="description" content="Wanderlust Journeys designs custom travel experiences across Kashmir, Ladakh and Kerala.">
+<style>
+:root {
+  --navy: #0b1a33;
+  --navy-light: #142b4d;
+  --gold: #c9a84c;
+  --gold-light: #e0c26e;
+  --cream: #f8f6f1;
+  --white: #ffffff;
+  --text: #2a3342;
+  --text-light: #6b7688;
+  --border: #e6e2d8;
+  --whatsapp: #25D366;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Georgia', 'Times New Roman', serif; background: var(--white); color: var(--text); line-height: 1.7; }
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+.container { width: 90%; max-width: 1200px; margin: 0 auto; }
 
+/* Top Bar */
+.top-bar { background: var(--navy); color: #fff; font-size: 12px; padding: 10px 0; letter-spacing: 0.5px; }
+.top-bar-inner { display: flex; justify-content: space-between; align-items: center; gap: 15px; flex-wrap: wrap; }
+.top-bar a { color: var(--gold-light); }
+.top-bar .highlight { color: var(--gold-light); font-weight: bold; }
+
+/* Header */
+.header { background: var(--white); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--border); }
+.header-inner { min-height: 85px; display: flex; align-items: center; justify-content: space-between; gap: 25px; }
+.logo { font-family: 'Georgia', serif; }
+.logo strong { display: block; color: var(--navy); font-size: 22px; font-weight: bold; letter-spacing: 1px; }
+.logo span { font-size: 11px; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; font-family: Arial, sans-serif; }
+.nav { display: flex; align-items: center; gap: 28px; font-family: Arial, sans-serif; }
+.nav a { color: var(--navy); font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; transition: color 0.2s; }
+.nav a:hover { color: var(--gold); }
+.nav-whatsapp { background: var(--gold); color: var(--navy) !important; padding: 10px 20px; border-radius: 2px; font-weight: 700; }
+.menu-btn { display: none; background: var(--navy); color: #fff; border: 0; padding: 9px 12px; border-radius: 2px; font-size: 20px; cursor: pointer; }
+
+/* Hero */
+.hero {
+  min-height: 640px;
+  position: relative;
+  background: linear-gradient(rgba(11,26,51,0.65), rgba(11,26,51,0.65)), url('images/dallakeview1.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+}
+.hero-content { max-width: 800px; margin: 0 auto; padding: 60px 0; }
+.hero small { display: block; color: var(--gold-light); letter-spacing: 4px; text-transform: uppercase; font-size: 12px; margin-bottom: 20px; font-family: Arial, sans-serif; }
+.hero h1 { font-size: 58px; line-height: 1.15; margin-bottom: 22px; font-weight: normal; }
+.hero p { font-size: 18px; color: #e0e6f0; margin-bottom: 35px; font-family: Arial, sans-serif; font-weight: 300; }
+.btn { display: inline-block; padding: 14px 30px; border-radius: 2px; font-weight: 700; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; transition: all 0.3s; font-family: Arial, sans-serif; margin: 5px; }
+.btn-gold { background: var(--gold); color: var(--navy); }
+.btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+.btn-outline { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.5); }
+.btn-outline:hover { background: rgba(255,255,255,0.1); }
+.btn-whatsapp { background: var(--whatsapp); color: #fff; }
+.btn-whatsapp:hover { transform: translateY(-2px); }
+
+/* Sections */
+.section { padding: 90px 0; }
+.section-cream { background: var(--cream); }
+.section-heading { text-align: center; margin-bottom: 55px; }
+.section-heading small { color: var(--gold); font-weight: bold; text-transform: uppercase; letter-spacing: 3px; font-size: 11px; font-family: Arial, sans-serif; }
+.section-heading h2 { color: var(--navy); font-size: 40px; margin: 12px 0 14px; font-weight: normal; }
+.section-heading p { max-width: 620px; margin: 0 auto; color: var(--text-light); font-size: 15px; font-family: Arial, sans-serif; }
+
+/* Services */
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.service-card { text-align: center; padding: 40px 25px; background: var(--white); border: 1px solid var(--border); transition: all 0.3s; }
+.service-card:hover { border-color: var(--gold); transform: translateY(-5px); }
+.service-icon { font-size: 36px; margin-bottom: 18px; }
+.service-card h3 { color: var(--navy); font-size: 18px; margin-bottom: 10px; font-weight: normal; }
+.service-card p { color: var(--text-light); font-size: 14px; font-family: Arial, sans-serif; }
+
+/* Packages */
+.packages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.package-card { background: var(--white); border: 1px solid var(--border); overflow: hidden; transition: all 0.3s; display: flex; flex-direction: column; }
+.package-card:hover { box-shadow: 0 15px 40px rgba(11,26,51,0.1); }
+.package-card img { width: 100%; height: 220px; object-fit: cover; }
+.package-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
+.package-duration { color: var(--gold); font-size: 11px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; font-family: Arial, sans-serif; margin-bottom: 10px; display: block; }
+.package-body h3 { color: var(--navy); font-size: 22px; margin-bottom: 8px; font-weight: normal; }
+.package-route { color: var(--text-light); font-size: 13px; font-family: Arial, sans-serif; margin-bottom: 14px; }
+.package-desc { color: var(--text-light); font-size: 14px; margin-bottom: 16px; font-family: Arial, sans-serif; }
+.package-actions { display: flex; gap: 10px; margin-top: auto; flex-wrap: wrap; }
+.package-actions .btn { flex: 1; text-align: center; padding: 11px 12px; font-size: 11px; }
+
+/* Why Us */
+.why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: center; }
+.why-item h4 { color: var(--navy); font-size: 16px; margin-bottom: 8px; font-weight: normal; }
+.why-item p { color: var(--text-light); font-size: 13px; font-family: Arial, sans-serif; }
+.why-icon { font-size: 32px; margin-bottom: 15px; color: var(--gold); }
+
+/* Steps */
+.steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; text-align: center; }
+.step-number { width: 60px; height: 60px; border-radius: 50%; background: var(--navy); color: var(--gold-light); display: flex; align-items: center; justify-content: center; font-size: 24px; margin: 0 auto 20px; font-family: 'Georgia', serif; }
+.step-card h3 { color: var(--navy); font-size: 18px; margin-bottom: 10px; font-weight: normal; }
+.step-card p { color: var(--text-light); font-size: 14px; font-family: Arial, sans-serif; }
+
+/* Enquiry Form */
+.enquiry-section { background: var(--navy); color: #fff; }
+.enquiry-section .section-heading h2 { color: #fff; }
+.enquiry-section .section-heading p { color: #b8c4d6; }
+.form-box { max-width: 800px; margin: 0 auto; background: var(--white); padding: 45px; border-radius: 0; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.form-group { margin-bottom: 5px; }
+.form-group.full { grid-column: 1 / -1; }
+.form-group label { display: block; font-weight: 700; color: var(--navy); margin-bottom: 6px; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; font-family: Arial, sans-serif; }
+.form-group input, .form-group select, .form-group textarea { width: 100%; border: 1px solid var(--border); padding: 13px 14px; border-radius: 0; font-family: Arial, sans-serif; font-size: 14px; background: var(--cream); color: var(--text); }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--gold); background: #fff; }
+.form-group textarea { min-height: 100px; resize: vertical; }
+.form-buttons { margin-top: 20px; }
+
+/* Contact */
+.contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; text-align: center; }
+.contact-card { padding: 30px; border: 1px solid var(--border); }
+.contact-card h3 { color: var(--navy); font-size: 16px; margin-bottom: 10px; font-weight: normal; }
+.contact-card a { color: var(--text-light); font-size: 14px; font-family: Arial, sans-serif; }
+
+/* Footer */
+.footer { background: var(--navy); color: #b8c4d6; padding: 60px 0 25px; font-family: Arial, sans-serif; }
+.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; }
+.footer h3 { color: #fff; margin-bottom: 15px; font-size: 15px; letter-spacing: 1px; text-transform: uppercase; }
+.footer p, .footer a { color: #b8c4d6; font-size: 13px; line-height: 2; }
+.footer-links a { display: block; margin-bottom: 6px; }
+.footer-links a:hover { color: var(--gold-light); }
+.copyright { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 40px; padding-top: 20px; text-align: center; font-size: 12px; color: #7a8aa3; }
+
+/* WhatsApp Float */
+.whatsapp-float { position: fixed; right: 20px; bottom: 20px; width: 58px; height: 58px; border-radius: 50%; background: var(--whatsapp); color: #fff; display: flex; justify-content: center; align-items: center; z-index: 2000; box-shadow: 0 5px 18px rgba(0,0,0,0.25); }
+.whatsapp-float svg { width: 30px; height: 30px; fill: #fff; }
+
+/* Responsive */
+@media(max-width: 950px) {
+  .nav { display: none; position: absolute; top: 85px; left: 0; right: 0; background: #fff; padding: 20px; flex-direction: column; align-items: stretch; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+  .nav.active { display: flex; }
+  .nav a { padding: 10px; }
+  .menu-btn { display: block; }
+  .hero h1 { font-size: 40px; }
+  .services-grid, .packages-grid, .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .contact-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .steps-grid { grid-template-columns: 1fr; }
+}
+@media(max-width: 650px) {
+  .hero h1 { font-size: 32px; }
+  .section { padding: 60px 0; }
+  .section-heading h2 { font-size: 28px; }
+  .services-grid, .packages-grid, .why-grid, .contact-grid, .footer-grid, .form-grid { grid-template-columns: 1fr; }
+  .form-box { padding: 25px 20px; }
+  .top-bar-inner { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+    <div class="container top-bar-inner">
+        <div>📍 Demo Valley, Srinagar • Curated Travel Experiences</div>
+        <div>📞 <a href="tel:+919999999999">+91 99999 99999</a> <span class="highlight">• Custom Itineraries</span></div>
+    </div>
+</div>
+
+<header class="header">
+    <div class="container header-inner">
+        <a href="#home" class="logo">
+            <strong>WANDERLUST JOURNEYS</strong>
+            <span>Explore • Experience • Belong</span>
+        </a>
+        <button class="menu-btn" id="menuBtn">☰</button>
+        <nav class="nav" id="mainNav">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#packages">Packages</a>
+            <a href="#contact">Contact</a>
+            <a class="nav-whatsapp" href="https://wa.me/919999999999?text=Hello%20WANDERLUST%20JOURNEYS" target="_blank">WhatsApp</a>
+        </nav>
+    </div>
+</header>
+
+<section class="hero" id="home">
+    <div class="container">
+        <div class="hero-content">
+            <small>Custom Travel Experiences</small>
+            <h1>Journeys Designed<br>Around You</h1>
+            <p>Thoughtfully crafted trips across Kashmir, Ladakh and Kerala — built around your dates, your pace and the experiences you actually want to remember.</p>
+            <a class="btn btn-gold" href="#enquiry">Plan Your Journey</a>
+            <a class="btn btn-outline" href="#packages">View Packages</a>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="services">
+    <div class="container">
+        <div class="section-heading">
+            <small>What We Do</small>
+            <h2>Travel Planning That Feels Personal</h2>
+            <p>Good travel planning is more than selecting hotels and sightseeing. We focus on creating a sensible route, comfortable pace and support you can rely on.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🗺️</div>
+                <h3>Custom Itineraries</h3>
+                <p>Routes shaped by practical destination knowledge and your personal travel style.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏔️</div>
+                <h3>Local Expertise</h3>
+                <p>We know every corner of the valley — from hidden meadows to the best houseboats.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💰</div>
+                <h3>Clear Pricing</h3>
+                <p>Practical packages without unnecessary complexity or hidden charges.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🛏️</div>
+                <h3>Handpicked Stays</h3>
+                <p>Comfortable hotels, heritage houseboats and scenic resorts.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📞</div>
+                <h3>Dedicated Support</h3>
+                <p>Assistance from planning through travel day — just a message away.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎯</div>
+                <h3>Flexible Planning</h3>
+                <p>Adjust the route, stay category and trip pace to suit your needs.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section section-cream" id="packages">
+    <div class="container">
+        <div class="section-heading">
+            <small>Handpicked Journeys</small>
+            <h2>Choose the Journey. We'll Personalise the Details.</h2>
+            <p>Every itinerary can be adapted around your travel dates, group size, hotel preference and pace.</p>
+        </div>
+        <div class="packages-grid">
+
+            <div class="package-card">
+                <img src="images/dallakeview1.jpg" alt="Kashmir Valley Escape">
+                <div class="package-body">
+                    <span class="package-duration">3 Nights / 4 Days</span>
+                    <h3>Kashmir Valley Escape</h3>
+                    <p class="package-route">Srinagar • Gulmarg • Pahalgam</p>
+                    <p class="package-desc">A balanced Kashmir journey with lake views, mountain scenery and time to enjoy Pahalgam.</p>
+                    <div class="package-actions">
+                        <a class="btn btn-whatsapp" href="https://wa.me/919999999999" target="_blank">Enquire</a>
+                        <a class="btn btn-gold" href="#enquiry">Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="package-card">
+                <img src="images/gulmarg1.jpg" alt="Gulmarg Snow Escape">
+                <div class="package-body">
+                    <span class="package-duration">4 Nights / 5 Days</span>
+                    <h3>Gulmarg Snow Escape</h3>
+                    <p class="package-route">Srinagar • Gulmarg • Sonamarg</p>
+                    <p class="package-desc">A mountain escape with scenic Srinagar stays and extended time around Gulmarg.</p>
+                    <div class="package-actions">
+                        <a class="btn btn-whatsapp" href="https://wa.me/919999999999" target="_blank">Enquire</a>
+                        <a class="btn btn-gold" href="#enquiry">Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="package-card">
+                <img src="images/pahalgam1.jpg" alt="Complete Kashmir Journey">
+                <div class="package-body">
+                    <span class="package-duration">5 Nights / 6 Days</span>
+                    <h3>Complete Kashmir Journey</h3>
+                    <p class="package-route">Srinagar • Gulmarg • Pahalgam • Sonamarg</p>
+                    <p class="package-desc">A fuller itinerary for travellers who want the major valleys without rushing.</p>
+                    <div class="package-actions">
+                        <a class="btn btn-whatsapp" href="https://wa.me/919999999999" target="_blank">Enquire</a>
+                        <a class="btn btn-gold" href="#enquiry">Details</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="section-heading">
+            <small>Why Choose Us</small>
+            <h2>Travel With Confidence</h2>
+        </div>
+        <div class="why-grid">
+            <div class="why-item">
+                <div class="why-icon">🏔️</div>
+                <h4>Local Expertise</h4>
+                <p>Routes shaped by practical destination knowledge.</p>
+            </div>
+            <div class="why-item">
+                <div class="why-icon">🔧</div>
+                <h4>Flexible Planning</h4>
+                <p>Adjust the route, stay category and trip pace.</p>
+            </div>
+            <div class="why-item">
+                <div class="why-icon">💡</div>
+                <h4>Clear Recommendations</h4>
+                <p>Practical advice instead of overwhelming choices.</p>
+            </div>
+            <div class="why-item">
+                <div class="why-icon">📞</div>
+                <h4>Responsive Support</h4>
+                <p>Help before the trip and while you are travelling.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section section-cream">
+    <div class="container">
+        <div class="section-heading">
+            <small>Simple Process</small>
+            <h2>How It Works</h2>
+        </div>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Tell Us Your Plans</h3>
+                <p>Share your destination, travel dates and number of travellers.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>We Shape Your Route</h3>
+                <p>Our team creates a suitable itinerary around your preferences.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Travel &amp; Enjoy</h3>
+                <p>We handle the arrangements so you can focus on the experience.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section enquiry-section" id="enquiry">
+    <div class="container">
+        <div class="section-heading">
+            <small>Start Planning</small>
+            <h2>Tell Us Where You Want to Go</h2>
+            <p>Share your destination, travel dates and number of travellers. Our team can then help shape a suitable itinerary.</p>
+        </div>
+        <div class="form-box">
+            <form id="travelForm">
+                <div class="form-grid">
+                    <div class="form-group"><label>Your Name *</label><input type="text" id="name" required placeholder="Enter your name"></div>
+                    <div class="form-group"><label>WhatsApp Number *</label><input type="tel" id="phone" required placeholder="Your WhatsApp number"></div>
+                    <div class="form-group"><label>Destination</label><input type="text" id="destination" placeholder="e.g. Kashmir, Ladakh, Kerala"></div>
+                    <div class="form-group"><label>Travel Date</label><input type="date" id="date"></div>
+                    <div class="form-group"><label>Number of Travellers</label><input type="number" id="travellers" min="1" placeholder="e.g. 4"></div>
+                    <div class="form-group"><label>Travel Style</label><select id="style"><option value="">Select</option><option>Family Trip</option><option>Couple / Honeymoon</option><option>Group Tour</option><option>Adventure</option><option>Custom</option></select></div>
+                    <div class="form-group full"><label>Message</label><textarea id="message" placeholder="Tell us more about your trip..."></textarea></div>
+                </div>
+                <div class="form-buttons"><button type="submit" class="btn btn-gold" style="width:100%;">Send Enquiry on WhatsApp</button></div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="contact">
+    <div class="container">
+        <div class="section-heading">
+            <small>Get In Touch</small>
+            <h2>Contact Us</h2>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h3>Phone</h3>
+                <a href="tel:+919999999999">+91 99999 99999</a>
+            </div>
+            <div class="contact-card">
+                <h3>WhatsApp</h3>
+                <a href="https://wa.me/919999999999" target="_blank">Chat With Us</a>
+            </div>
+            <div class="contact-card">
+                <h3>Email</h3>
+                <a href="mailto:hello@example.com">hello@example.com</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <h3>WANDERLUST JOURNEYS</h3>
+                <p>Custom travel experiences across Kashmir, Ladakh and Kerala. Designed around you.</p>
+                <p style="margin-top:10px; color:var(--gold-light);">Explore • Experience • Belong</p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#services">Services</a>
+                    <a href="#packages">Packages</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div>
+                <h3>Contact</h3>
+                <div class="footer-links">
+                    <a href="tel:+919999999999">+91 99999 99999</a>
+                    <a href="mailto:hello@example.com">hello@example.com</a>
+                    <a href="https://wa.me/919999999999">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">© 2026 WANDERLUST JOURNEYS. All rights reserved.</div>
+    </div>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/919999999999" target="_blank"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 2C8.3 2 2 8.3 2 16c0 2.5.7 4.8 1.9 6.9L2 30l7.4-1.9c2 1.1 4.3 1.7 6.6 1.7 7.7 0 14-6.3 14-14S23.7 2 16 2zm0 25.5c-2.1 0-4.2-.6-6-1.6l-.4-.3-4.4 1.1 1.2-4.3-.3-.4c-1.1-1.9-1.7-4-1.7-6.2 0-6.4 5.2-11.6 11.6-11.6S27.6 9.6 27.6 16 22.4 27.5 16 27.5zm6.4-8.7c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2s-.9 1.1-1.1 1.3c-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.7-1.7-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.7.1-.1.3-.4.5-.5.2-.2.2-.3.3-.5.1-.2.1-.4 0-.5-.1-.2-.8-1.9-1.1-2.6-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.2 3.4 1.4 3.6c.2.2 2.4 3.6 5.7 5.1.8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 2-1 2.3-1.7.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg></a>
+
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const mainNav = document.getElementById("mainNav");
+menuBtn.addEventListener("click", function() { mainNav.classList.toggle("active"); });
+document.querySelectorAll("#mainNav a").forEach(function(link) { link.addEventListener("click", function() { mainNav.classList.remove("active"); }); });
+const travelForm = document.getElementById("travelForm");
+travelForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const destination = document.getElementById("destination").value.trim();
+    const date = document.getElementById("date").value;
+    const travellers = document.getElementById("travellers").value;
+    const style = document.getElementById("style").value;
+    const message = document.getElementById("message").value.trim();
+    let whatsappMessage = "Hello WANDERLUST JOURNEYS,%0A%0A*New Travel Enquiry*%0A%0A*Name:* " + encodeURIComponent(name) + "%0A*WhatsApp:* " + encodeURIComponent(phone) + "%0A";
+    if (destination) whatsappMessage += "*Destination:* " + encodeURIComponent(destination) + "%0A";
+    if (date) whatsappMessage += "*Travel Date:* " + encodeURIComponent(date) + "%0A";
+    if (travellers) whatsappMessage += "*Travellers:* " + encodeURIComponent(travellers) + "%0A";
+    if (style) whatsappMessage += "*Travel Style:* " + encodeURIComponent(style) + "%0A";
+    if (message) whatsappMessage += "*Message:* " + encodeURIComponent(message) + "%0A";
+    window.open("https://wa.me/919999999999?text=" + whatsappMessage, "_blank");
+});
+</script>
+
+</body>
+</html>
